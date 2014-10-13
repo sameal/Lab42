@@ -29,6 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		      e.printStackTrace();
 		    }
 		try {
+		  System.out.print("This is the first change");
 		  String ID = "";
 		  String sql = "";
 	      Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookdb","root","123456");
@@ -59,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
            录入数据<br>
     <td>ISBN码:<input type = "text" name = "ISBN"><br></td>
     <td>标      题 :<input type = "text" name = "Title"><br></td>
-    <td>作者ID:<input type = "text" name = "AuthorID">(只支持已存在作者,ID：00000000-00000002之间)<br></td>
+    <td>作者ID:<input type = "text" name = "AuthorID">(只支持已存在作者,<br></td>
     <td>出版社:<input type = "text" name = "Publisher"><br></td>
     <td>出版日:<input type = "text" name = "Publishdate"><br></td>
     <td>价      格 :<input type = "text" name = "Price"><br></td> 
