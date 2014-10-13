@@ -1,0 +1,28 @@
+import java.sql.*;
+
+public class test2 {
+ public static void main(String args[])
+ {
+     try {
+         Class.forName("com.mysql.jdbc.Driver"); 
+         System.out.println("Success loading Mysql Driver!");
+        }
+        catch (Exception e) {
+          System.out.print("Error loading Mysql Driver!");
+          e.printStackTrace();
+        }
+  try {
+      Connection connect = DriverManager.getConnection( "jdbc:mysql://localhost:3306/bookdb","root","123456");
+     
+       PreparedStatement Statement=connect.prepareStatement("INSERT INTO Author VALUES(?,?,?,?)");
+       Statement.setString(1,"WuJun");
+       Statement.setString(2,"00000003");
+       Statement.setString(3,"40");
+       Statement.setString(4,"中");
+       Statement.executeUpdate();
+   }
+   }catch(SQLException e)
+   {
+   }
+ }
+}
